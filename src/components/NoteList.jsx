@@ -3,14 +3,17 @@ import NoteItem from "./NoteItem";
 import { motion, AnimatePresence } from "framer-motion";
 import NotesContext from "../context/NotesContext";
 import { useContext } from "react";
+import Spinner from "./shared/Spinner";
 
 function NoteList() {
-  const { notes } = useContext(NotesContext);
-  if (!notes && notes.length === 0) {
+  const { notes, isLoading } = useContext(NotesContext);
+  if (!isLoading && (!notes || notes.length === 0)) {
     return <p>No Notes</p>;
   }
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <div className="note-list">
       <AnimatePresence>
         {notes.map((item) => (
@@ -26,6 +29,8 @@ function NoteList() {
       </AnimatePresence>
     </div>
   );
+
+  return;
 }
 
 export default NoteList;
