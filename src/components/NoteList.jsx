@@ -29,8 +29,6 @@ function NoteList() {
       </AnimatePresence>
     </div>
   );
-
-  return;
 }
 
 export default NoteList;

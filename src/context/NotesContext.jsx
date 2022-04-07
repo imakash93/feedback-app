@@ -25,7 +25,7 @@ export const NotesProvider = ({ children }) => {
 
   const deleteNote = async (id) => {
     if (window.confirm("Are you sue?")) {
-      const response = await fetch(`/Notes/${id}`, {
+      await fetch(`/Notes/${id}`, {
         method: "DELETE",
       });
       setNotes(notes.filter((item) => item.id !== id));
