@@ -12,7 +12,7 @@ function PrioritySelect({ day }) {
   const { noteEdit } = useContext(NotesContext);
 
   useEffect(() => {
-    if (noteEdit.edit == true) {
+    if (noteEdit.edit === true) {
       setPriority(noteEdit.note.day);
     }
   }, [noteEdit]);

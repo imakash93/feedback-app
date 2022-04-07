@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import Card from "./shared/Card";
 import { FaTimes, FaEdit } from "react-icons/fa";
 import NotesContext from "../context/NotesContext";

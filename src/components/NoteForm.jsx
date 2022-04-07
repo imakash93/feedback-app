@@ -14,7 +14,7 @@ function NoteForm() {
   const { addNote, noteEdit, updateNote } = useContext(NotesContext);
 
   useEffect(() => {
-    if (noteEdit.edit == true) {
+    if (noteEdit.edit === true) {
       setBtnDisabled(false);
       setText(noteEdit.note.text);
       setDay(noteEdit.note.day);
